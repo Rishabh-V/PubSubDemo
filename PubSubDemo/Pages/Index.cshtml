@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+    <h2>Hey there,</h2>
+    <div class="input-group mb-3">
+        <input type="text" name="message" class="form-control" placeholder="Enter your message here..." aria-label="Message" aria-describedby="button-addon2">
+        <button class="btn btn-primary" type="submit" id="button-addon2">Submit</button>
+    </div>
+</form>
+
+@if (@Model.Messages != null)
+{
+    @foreach (var message in @Model.Messages)
+    {
+        bool isLatest = message.MessageId == @Model.LatestMessageId;
+        var background = isLatest ? "bg-primary" : "bg-secondary";
+        var normalHeader = "Message ID - " + message.MessageId;
+        var title = isLatest ? "Latest Message: " + normalHeader : normalHeader;
+        <div class="card text-white @background mb-3" style="max-width: 25rem;">
+            <div class="card-header">@title</div>
+            <div class="card-body">
+                <h4 class="card-title">Data</h4>
+                <p class="card-text">@message.Message.Data.ToStringUtf8()</p>
+            </div>
+        </div>
+    }
+}

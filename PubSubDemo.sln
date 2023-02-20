@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubSubDemo", "PubSubDemo\PubSubDemo.csproj", "{C7791B33-F19C-4AEE-8E65-4EDDB17D80BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Local Packages", "Local Packages", "{F0E97C81-778B-4EF2-8D49-772B0719D32D}"
+	ProjectSection(SolutionItems) = preProject
+		..\google-cloud-dotnet\apis\Google.Cloud.PubSub.V1\Google.Cloud.PubSub.V1\bin\Debug\Google.Cloud.PubSub.V1.3.4.0.nupkg = ..\google-cloud-dotnet\apis\Google.Cloud.PubSub.V1\Google.Cloud.PubSub.V1\bin\Debug\Google.Cloud.PubSub.V1.3.4.0.nupkg
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7791B33-F19C-4AEE-8E65-4EDDB17D80BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7791B33-F19C-4AEE-8E65-4EDDB17D80BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7791B33-F19C-4AEE-8E65-4EDDB17D80BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7791B33-F19C-4AEE-8E65-4EDDB17D80BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E627D6E-6868-4754-8CCE-B162E47CBC50}
+	EndGlobalSection
+EndGlobal
