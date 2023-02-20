@@ -18,8 +18,7 @@ Before running the sample code, you need to have:
 ## Usage
 If the package restores correctly, the solution should build successfully.
 
-If the appsettings.json file is updated correctly, the application should load correctly and we should see a landing page in which a textbox and button should appear where the user can enter a text message and click on submit button and the submitted message will appear with the published message ID in the bottom of the screen. The high level flow can be seen as shown next:
-
+If the appsettings.json file is updated correctly, the application should load correctly and we should see a landing page in which a textbox and button should appear where the user can enter a text message and click on submit button and the submitted message will appear with the published message ID in the bottom of the screen. The high level flow can be seen ![here](https://user-images.githubusercontent.com/15943060/220071996-7144ed9c-455e-4d01-9480-9970b19a64bb.mp4)
 
 ## Working
 - Both `PublisherClient` and `SubscriberClient` are registerd as singleton in the DI container using the new extension methods available in the library.
