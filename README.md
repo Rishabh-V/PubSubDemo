@@ -23,8 +23,12 @@ If the appsettings.json file is updated correctly, the application should load c
 
 ## Working
 - Both `PublisherClient` and `SubscriberClient` are registerd as singleton in the DI container using the new extension methods available in the library.
-- 
+- There is a hosted background service named `SubscriberService` that starts the singleton `SubscriberClient`. The `SubscriberClient` listens to the subscription specified in the appsettings.json for any new messages.
+- There is a singleton `MessageQueue` based on `Channel<T>` and hence can be used concurrently. This queue holds the message received from the `SubscriberClient`
+- When the user enters the message in the textbox and clicks on the Submit button, the singleton `PublisherClient` publishes the message to the specified Topic.
+- The singleton `SubscriberClient` running in the background `SubscriberService` picks the message from the specified `Subscription`and adds it to the `MessageQueue`
+- The page then picks up the message from the `MessageQueue` and displays it on the page. 
+
+Note: This is just a demo application. Here the message is picked up from the queue at the same time when the publisher publishes a message. In case there are multiple instances of the app running then the message may not display until the message is published from that instance. That can be fixed by various ways including a timer based refresh logic which can refresh the page every n seconds or so. 
 
 
-
-## Working 
