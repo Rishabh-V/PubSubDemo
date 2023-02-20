@@ -18,7 +18,9 @@ Before running the sample code, you need to have:
 ## Usage
 If the package restores correctly, the solution should build successfully.
 
-If the appsettings.json file is updated correctly, the application should load correctly and we should see a landing page in which a textbox and button should appear where the user can enter a text message and click on submit button and the submitted message will appear with the published message ID in the bottom of the screen. The high level flow can be seen ![here](https://user-images.githubusercontent.com/15943060/220071996-7144ed9c-455e-4d01-9480-9970b19a64bb.mp4)
+If the appsettings.json file is updated correctly, the application should load correctly and we should see a landing page in which a textbox and button should appear where the user can enter a text message and click on submit button and the submitted message will appear with the published message ID in the bottom of the screen. The high level flow can be seen [here](https://user-images.githubusercontent.com/15943060/220071996-7144ed9c-455e-4d01-9480-9970b19a64bb.mp4) or below.
+
+<img src="https://user-images.githubusercontent.com/15943060/220071996-7144ed9c-455e-4d01-9480-9970b19a64bb.mp4"/>
 
 ## Working
 - Both `PublisherClient` and `SubscriberClient` are registerd as singleton in the DI container using the new extension methods available in the library.
@@ -28,6 +30,6 @@ If the appsettings.json file is updated correctly, the application should load c
 - The singleton `SubscriberClient` running in the background `SubscriberService` picks the message from the specified `Subscription`and adds it to the `MessageQueue`
 - The page then picks up the message from the `MessageQueue` and displays it on the page. 
 
-Note: This is just a demo application. Here the message is picked up from the queue at the same time when the publisher publishes a message. In case there are multiple instances of the app running then the message may not display until the message is published from that instance. That can be fixed by various ways including a timer based refresh logic which can refresh the page every n seconds or so. 
+_Note_: This is just a demo application. In this sample app, the message is picked up from the queue at the same time when the publisher publishes a message. In case there are multiple instances of the app running then a newly published message may not display in the page until a message is published from that instance. That can be fixed by various ways including a timer based refresh logic which can refresh the page every n seconds or so. This however is not the scope or intention of the app.  
 
 
