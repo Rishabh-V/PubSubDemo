@@ -24,10 +24,9 @@ public class SubscriberService : BackgroundService
         {
             await _subscriberClient.StartAsync(async (msg, token) =>
             {
-                using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(stoppingToken, token);
                 _logger.LogInformation($"Received message {msg.MessageId}: {msg.Data}");
                 await _queue.PushAsync(new MessageModel { Message = msg });
-                return await Task.FromResult(SubscriberClient.Reply.Ack);
+                return SubscriberClient.Reply.Ack;
             });
         }
         catch (Exception ex)

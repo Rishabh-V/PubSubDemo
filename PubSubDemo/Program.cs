@@ -9,6 +9,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         var configuration = builder.Configuration;
 
+        // Read the settings.
         var credentialsPath = configuration.GetValue<string>("CredentialsPath");
         var topicId = configuration.GetValue<string>("TopicId");
         var projectId = configuration.GetValue<string>("ProjectId");
@@ -17,15 +18,21 @@ public class Program
         TopicName topicName = TopicName.FromProjectTopic(projectId, topicId);
         SubscriptionName subscriptionName = SubscriptionName.FromProjectSubscription(projectId, subscriptionId);
 
-        if (!string.IsNullOrEmpty(credentialsPath))
+        if (!string.IsNullOrWhiteSpace(credentialsPath))
         {
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentialsPath);
         }
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+
+        // Add the message queue as a singleton.
         builder.Services.AddSingleton<MessageQueue>();
+        
+        // Add the hosted services.
         builder.Services.AddHostedService<SubscriberService>();
+
+        // Add the Pub/Sub clients as singleton.
         builder.Services.AddPublisherClient(topicName);
         builder.Services.AddSubscriberClient(subscriptionName);
 

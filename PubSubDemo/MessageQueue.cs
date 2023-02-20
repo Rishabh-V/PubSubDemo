@@ -44,7 +44,7 @@ public class MessageQueue
     /// <returns>The <see cref="MessageModel"/>.</returns>
     /// <remarks>
     /// This method may wait indefinitely if there is no message in the queue. So, use with cancellation token.
-    /// While reading the message from the queue, it will be added to the <see cref="Messages"/> collection.
+    /// While reading the message from the queue, it will be added to the <see cref="Messages"/> collection and the <see cref="LatestMessageId"/> is set to the latest pulled message.
     /// </remarks>
     public async ValueTask<MessageModel> PullAsync(CancellationToken cancellationToken)
     {
