@@ -6,8 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PubSubDemo", "PubSubDemo\PubSubDemo.csproj", "{C7791B33-F19C-4AEE-8E65-4EDDB17D80BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Local Packages", "Local Packages", "{F0E97C81-778B-4EF2-8D49-772B0719D32D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A149C3E-79CF-4DCE-B068-DF0479F1C5C5}"
 	ProjectSection(SolutionItems) = preProject
-		..\google-cloud-dotnet\apis\Google.Cloud.PubSub.V1\Google.Cloud.PubSub.V1\bin\Debug\Google.Cloud.PubSub.V1.3.4.0.nupkg = ..\google-cloud-dotnet\apis\Google.Cloud.PubSub.V1\Google.Cloud.PubSub.V1\bin\Debug\Google.Cloud.PubSub.V1.3.4.0.nupkg
+		PubSubDemo\Google.Cloud.PubSub.V1.3.4.0.nupkg = PubSubDemo\Google.Cloud.PubSub.V1.3.4.0.nupkg
 	EndProjectSection
 EndProject
 Global
