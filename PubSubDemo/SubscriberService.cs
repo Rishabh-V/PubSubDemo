@@ -34,4 +34,9 @@ public class SubscriberService : BackgroundService
             _logger.LogError(ex, "Exception occurred while receiving message.");
         }
     }
+
+    public override async Task StopAsync(CancellationToken stoppingToken)
+    {
+        await _subscriberClient.StopAsync(stoppingToken);
+    }
 }
