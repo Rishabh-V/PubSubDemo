@@ -24,7 +24,7 @@ public class SubscriberService : BackgroundService
         {
             await _subscriberClient.StartAsync(async (msg, token) =>
             {
-                _logger.LogInformation($"Received message {msg.MessageId}: {msg.Data}");
+                _logger.LogInformation($"Received message {msg.MessageId}: {msg.Data.ToStringUtf8()}");
                 await _queue.PushAsync(new MessageModel { Message = msg });
                 return SubscriberClient.Reply.Ack;
             });
